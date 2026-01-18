@@ -2,7 +2,7 @@
 import { AdventureData } from '../types';
 
 const adventureData: AdventureData = {
-  "instagram": "https://instagram.com/gopal_adventure",
+  "instagram": "https://instagram.com/gopal3008",
   "hobbies": [
     {
       "id": "3dprint",

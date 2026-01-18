@@ -1,13 +1,13 @@
 
 import React, { useState, Suspense, useRef, useEffect, useMemo } from 'react';
-import { 
-  Briefcase, Code, BookOpen, Mic, Award, ChevronDown, 
+import {
+  Briefcase, Code, BookOpen, Mic, Award, ChevronDown,
   Box, Wind, Cpu, Video, Plane, Snowflake, Waves, Zap, Rocket,
   Linkedin, Instagram, ExternalLink, Activity
 } from 'lucide-react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { 
-  OrbitControls, Float, MeshDistortMaterial, Sphere, PerspectiveCamera, 
+import {
+  OrbitControls, Float, MeshDistortMaterial, Sphere, PerspectiveCamera,
   Text, Stars, Sparkles, Cloud, Float as DreiFloat, Environment
 } from '@react-three/drei';
 import * as THREE from 'three';
@@ -36,7 +36,7 @@ const Card: React.FC<{ children: React.ReactNode; className?: string }> = ({ chi
 const PrinterScene = () => {
   const meshRef = useRef<THREE.Mesh>(null);
   const headRef = useRef<THREE.Group>(null);
-  
+
   useFrame((state) => {
     const t = state.clock.getElapsedTime();
     if (meshRef.current) {
@@ -76,7 +76,7 @@ const PrinterScene = () => {
 const WindResistance = () => {
   const count = 120;
   const meshRef = useRef<THREE.Points>(null);
-  
+
   const particles = useMemo(() => {
     const pos = new Float32Array(count * 3);
     const speed = new Float32Array(count);
@@ -109,11 +109,11 @@ const WindResistance = () => {
           itemSize={3}
         />
       </bufferGeometry>
-      <pointsMaterial 
-        size={0.04} 
-        color="#ffffff" 
-        transparent 
-        opacity={0.15} 
+      <pointsMaterial
+        size={0.04}
+        color="#ffffff"
+        transparent
+        opacity={0.15}
         blending={THREE.AdditiveBlending}
         depthWrite={false}
       />
@@ -123,7 +123,7 @@ const WindResistance = () => {
 
 const DroneScene = () => {
   const droneRef = useRef<THREE.Group>(null);
-  
+
   useFrame((state) => {
     const t = state.clock.getElapsedTime();
     if (droneRef.current) {
@@ -131,20 +131,20 @@ const DroneScene = () => {
       const targetX = Math.sin(t * 0.7) * 2.0;
       const targetZ = Math.cos(t * 0.4) * 1.5;
       const targetY = Math.sin(t * 1.1) * 0.4; // Altitude changes
-      
+
       // Smooth interpolation for "physics-like" movement
       droneRef.current.position.x = THREE.MathUtils.lerp(droneRef.current.position.x, targetX, 0.05);
       droneRef.current.position.z = THREE.MathUtils.lerp(droneRef.current.position.z, targetZ, 0.05);
       droneRef.current.position.y = THREE.MathUtils.lerp(droneRef.current.position.y, targetY, 0.05);
-      
+
       // Banking Turns (Roll) based on horizontal change
       const roll = (Math.sin(t * 0.7) * -0.5);
       droneRef.current.rotation.z = THREE.MathUtils.lerp(droneRef.current.rotation.z, roll, 0.05);
-      
+
       // Pitch based on forward/backward "acceleration"
       const pitch = (Math.cos(t * 0.4) * 0.3);
       droneRef.current.rotation.x = THREE.MathUtils.lerp(droneRef.current.rotation.x, pitch, 0.05);
-      
+
       // Slight yaw to look into the turn
       droneRef.current.rotation.y = THREE.MathUtils.lerp(droneRef.current.rotation.y, Math.sin(t * 0.35) * 0.4, 0.03);
     }
@@ -164,28 +164,28 @@ const DroneScene = () => {
           <meshStandardMaterial color="#222" metalness={0.8} roughness={0.2} />
         </mesh>
         {/* Motors & Props */}
-        {[ [1,1], [1,-1], [-1,1], [-1,-1] ].map((pos, i) => (
+        {[[1, 1], [1, -1], [-1, 1], [-1, -1]].map((pos, i) => (
           <group key={i} position={[pos[0], 0.1, pos[1]]}>
             <mesh>
               <cylinderGeometry args={[0.1, 0.1, 0.2]} />
               <meshStandardMaterial color="#444" metalness={1} />
             </mesh>
             <DreiFloat speed={20} rotationIntensity={0} floatIntensity={0}>
-               <mesh rotation={[0, 0, 0]}>
-                  <boxGeometry args={[0.9, 0.01, 0.08]} />
-                  <meshStandardMaterial color="#00ff00" transparent opacity={0.4} blending={THREE.AdditiveBlending} />
-               </mesh>
+              <mesh rotation={[0, 0, 0]}>
+                <boxGeometry args={[0.9, 0.01, 0.08]} />
+                <meshStandardMaterial color="#00ff00" transparent opacity={0.4} blending={THREE.AdditiveBlending} />
+              </mesh>
             </DreiFloat>
           </group>
         ))}
         {/* FPV Camera Pod */}
         <mesh position={[0, 0.2, 0.5]}>
-           <boxGeometry args={[0.3, 0.3, 0.4]} />
-           <meshStandardMaterial color="#111" />
-           <mesh position={[0, 0, 0.2]}>
-              <sphereGeometry args={[0.08, 8, 8]} />
-              <meshStandardMaterial color="#000" emissive="#00ff00" emissiveIntensity={0.5} />
-           </mesh>
+          <boxGeometry args={[0.3, 0.3, 0.4]} />
+          <meshStandardMaterial color="#111" />
+          <mesh position={[0, 0, 0.2]}>
+            <sphereGeometry args={[0.08, 8, 8]} />
+            <meshStandardMaterial color="#000" emissive="#00ff00" emissiveIntensity={0.5} />
+          </mesh>
         </mesh>
         <Stars radius={100} depth={50} count={2000} factor={4} saturation={0} fade speed={1} />
       </group>
@@ -202,8 +202,8 @@ const ParaglideScene = () => {
           <meshStandardMaterial color="#ff9900" side={THREE.DoubleSide} />
         </mesh>
         <mesh position={[0, 0, 0]}>
-           <capsuleGeometry args={[0.1, 0.3, 4, 8]} />
-           <meshStandardMaterial color="#fff" />
+          <capsuleGeometry args={[0.1, 0.3, 4, 8]} />
+          <meshStandardMaterial color="#fff" />
         </mesh>
       </DreiFloat>
       {/* Fix: Replaced invalid 'width' and 'depth' props with 'bounds' prop for the Cloud component */}
@@ -413,14 +413,14 @@ const AdventurePortfolio: React.FC = () => {
             Bringing digital blueprints to life. I specialize in mechanical functional parts and custom drone components using various materials from PLA to Carbon Fiber PETG.
           </p>
           <div className="grid grid-cols-2 gap-4">
-             <div className="p-6 bg-white/5 border border-white/10 rounded-2xl">
-               <h4 className="text-blue-400 font-bold mb-2">Build Volume</h4>
-               <p className="text-white/80">300x300x400mm</p>
-             </div>
-             <div className="p-6 bg-white/5 border border-white/10 rounded-2xl">
-               <h4 className="text-blue-400 font-bold mb-2">Main Rig</h4>
-               <p className="text-white/80">Prusa MK3S+</p>
-             </div>
+            <div className="p-6 bg-white/5 border border-white/10 rounded-2xl">
+              <h4 className="text-blue-400 font-bold mb-2">Build Volume</h4>
+              <p className="text-white/80">300x300x400mm</p>
+            </div>
+            <div className="p-6 bg-white/5 border border-white/10 rounded-2xl">
+              <h4 className="text-blue-400 font-bold mb-2">Main Rig</h4>
+              <p className="text-white/80">Prusa MK3S+</p>
+            </div>
           </div>
         </div>
       </section>
@@ -433,9 +433,9 @@ const AdventurePortfolio: React.FC = () => {
             Engineering flight. From custom build frames to cinematic flight footage, I love the intersection of aerodynamics and embedded systems.
           </p>
           <div className="flex flex-wrap gap-3">
-             {["5-inch Freestyle", "Sub-250g Long Range", "Cinewhoop", "DJI O3 Air Unit"].map((tag) => (
-               <span key={tag} className="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-sm font-semibold text-white/40 italic">#{tag}</span>
-             ))}
+            {["5-inch Freestyle", "Sub-250g Long Range", "Cinewhoop", "DJI O3 Air Unit"].map((tag) => (
+              <span key={tag} className="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-sm font-semibold text-white/40 italic">#{tag}</span>
+            ))}
           </div>
         </div>
         <div className="order-1 md:order-2 h-[400px] md:h-[600px] bg-slate-900 rounded-3xl overflow-hidden relative shadow-2xl shadow-green-500/10">
@@ -449,8 +449,8 @@ const AdventurePortfolio: React.FC = () => {
             <OrbitControls enableZoom={false} />
           </Canvas>
           <div className="absolute bottom-6 right-6 bg-black/60 backdrop-blur-md p-4 rounded-xl border border-white/10">
-             <div className="text-xs text-white/40 uppercase tracking-widest font-bold mb-1">Telemetry Status</div>
-             <div className="text-green-500 font-mono text-lg animate-pulse">READY FOR TAKEOFF</div>
+            <div className="text-xs text-white/40 uppercase tracking-widest font-bold mb-1">Telemetry Status</div>
+            <div className="text-green-500 font-mono text-lg animate-pulse">READY FOR TAKEOFF</div>
           </div>
         </div>
       </section>
@@ -458,10 +458,10 @@ const AdventurePortfolio: React.FC = () => {
       {/* Paragliding Section */}
       <section className="min-h-screen relative overflow-hidden py-24 px-10 border-b border-white/5">
         <div className="absolute inset-0 z-0">
-          <video 
-            autoPlay 
-            loop 
-            muted 
+          <video
+            autoPlay
+            loop
+            muted
             playsInline
             className="w-full h-full object-cover opacity-20 grayscale"
           >
@@ -469,41 +469,41 @@ const AdventurePortfolio: React.FC = () => {
           </video>
         </div>
         <div className="relative z-10 grid md:grid-cols-2 gap-20 items-center h-full">
-           <div className="space-y-8">
-              <SectionHeading title="Paragliding" icon={<Plane size={24} />} dark />
-              <p className="text-2xl text-white/70 leading-relaxed font-light">
-                Hike and Fly expert. Finding the perfect thermal and soaring above the clouds provides a perspective no computer screen can ever match.
-              </p>
-              <button className="flex items-center gap-4 bg-orange-600 px-8 py-4 rounded-full font-bold hover:bg-orange-700 transition-all shadow-xl shadow-orange-900/20">
-                View Flight Logs <Activity size={20} />
-              </button>
-           </div>
-           <div className="h-[500px]">
-              <Canvas>
-                 <PerspectiveCamera makeDefault position={[0, 0, 5]} />
-                 <ambientLight intensity={1} />
-                 <Suspense fallback={null}>
-                    <ParaglideScene />
-                 </Suspense>
-              </Canvas>
-           </div>
+          <div className="space-y-8">
+            <SectionHeading title="Paragliding" icon={<Plane size={24} />} dark />
+            <p className="text-2xl text-white/70 leading-relaxed font-light">
+              Hike and Fly expert. Finding the perfect thermal and soaring above the clouds provides a perspective no computer screen can ever match.
+            </p>
+            <button className="flex items-center gap-4 bg-orange-600 px-8 py-4 rounded-full font-bold hover:bg-orange-700 transition-all shadow-xl shadow-orange-900/20">
+              View Flight Logs <Activity size={20} />
+            </button>
+          </div>
+          <div className="h-[500px]">
+            <Canvas>
+              <PerspectiveCamera makeDefault position={[0, 0, 5]} />
+              <ambientLight intensity={1} />
+              <Suspense fallback={null}>
+                <ParaglideScene />
+              </Suspense>
+            </Canvas>
+          </div>
         </div>
       </section>
 
       {/* Skiing Section */}
       <section className="min-h-screen grid md:grid-cols-2 gap-12 px-10 py-24 items-center">
         <div className="h-[400px] md:h-[600px] bg-slate-900 rounded-3xl overflow-hidden relative border border-white/5">
-           <Canvas>
-              <PerspectiveCamera makeDefault position={[0, 0, 5]} />
-              <ambientLight intensity={0.5} />
-              <pointLight position={[10, 10, 10]} />
-              <Suspense fallback={null}>
-                 <SkiingScene />
-              </Suspense>
-           </Canvas>
-           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center pointer-events-none">
-              <div className="text-8xl font-black text-white/5 uppercase italic tracking-tighter">CARVE</div>
-           </div>
+          <Canvas>
+            <PerspectiveCamera makeDefault position={[0, 0, 5]} />
+            <ambientLight intensity={0.5} />
+            <pointLight position={[10, 10, 10]} />
+            <Suspense fallback={null}>
+              <SkiingScene />
+            </Suspense>
+          </Canvas>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center pointer-events-none">
+            <div className="text-8xl font-black text-white/5 uppercase italic tracking-tighter">CARVE</div>
+          </div>
         </div>
         <div className="space-y-8">
           <SectionHeading title="Skiing" icon={<Snowflake size={24} />} dark />
@@ -511,29 +511,29 @@ const AdventurePortfolio: React.FC = () => {
             Chasing the powder. From carving black diamonds to backcountry exploration, winters are for the mountains.
           </p>
           <div className="flex gap-4">
-             <div className="flex-1 bg-white/5 p-8 rounded-3xl border border-white/10 hover:bg-white/10 transition-all">
-                <h3 className="text-3xl font-bold mb-2">4,200m</h3>
-                <p className="text-white/40 text-sm uppercase font-bold tracking-widest">Highest Peak</p>
-             </div>
-             <div className="flex-1 bg-white/5 p-8 rounded-3xl border border-white/10 hover:bg-white/10 transition-all">
-                <h3 className="text-3xl font-bold mb-2">95km/h</h3>
-                <p className="text-white/40 text-sm uppercase font-bold tracking-widest">Max Speed</p>
-             </div>
+            <div className="flex-1 bg-white/5 p-8 rounded-3xl border border-white/10 hover:bg-white/10 transition-all">
+              <h3 className="text-3xl font-bold mb-2">4,200m</h3>
+              <p className="text-white/40 text-sm uppercase font-bold tracking-widest">Highest Peak</p>
+            </div>
+            <div className="flex-1 bg-white/5 p-8 rounded-3xl border border-white/10 hover:bg-white/10 transition-all">
+              <h3 className="text-3xl font-bold mb-2">95km/h</h3>
+              <p className="text-white/40 text-sm uppercase font-bold tracking-widest">Max Speed</p>
+            </div>
           </div>
         </div>
       </section>
 
       <footer className="text-center py-24 border-t border-white/5">
-         <h2 className="text-6xl font-display font-black mb-8 text-white/20">The Adventure Continues</h2>
-         <a 
-            href={adventureData.instagram} 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="inline-flex items-center gap-3 bg-gradient-to-r from-purple-600 to-pink-600 px-10 py-5 rounded-full font-bold text-xl hover:scale-110 transition-transform shadow-2xl shadow-pink-600/20"
-          >
-            <Instagram size={28} />
-            Check My Instagram
-          </a>
+        <h2 className="text-6xl font-display font-black mb-8 text-white/20">The Adventure Continues</h2>
+        <a
+          href={adventureData.instagram}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-3 bg-gradient-to-r from-purple-600 to-pink-600 px-10 py-5 rounded-full font-bold text-xl hover:scale-110 transition-transform shadow-2xl shadow-pink-600/20"
+        >
+          <Instagram size={28} />
+          Check My Instagram
+        </a>
       </footer>
     </div>
   );
@@ -555,33 +555,33 @@ const App: React.FC = () => {
           <div className={`w-8 h-8 ${isAdventureMode ? 'bg-orange-600' : 'bg-blue-600'} rounded-full flex items-center justify-center transition-colors duration-500`}>
             <span className="text-white font-bold">G</span>
           </div>
-          <span className={`font-bold ${isAdventureMode ? 'text-white' : 'text-slate-900'}`}>Gopal S.</span>
+          <span className={`font-bold ${isAdventureMode ? 'text-white' : 'text-slate-900'}`}>Gopalakrishnan C</span>
         </div>
 
         <div className="pointer-events-auto flex items-center gap-4">
           {!isAdventureMode ? (
-             <a href={professionalData.linkedin} target="_blank" rel="noopener noreferrer" className="bg-white/50 backdrop-blur-md p-3 rounded-full hover:bg-blue-500 hover:text-white transition-all text-slate-600 border border-slate-200">
-               <Linkedin size={18} />
-             </a>
+            <a href={professionalData.linkedin} target="_blank" rel="noopener noreferrer" className="bg-white/50 backdrop-blur-md p-3 rounded-full hover:bg-blue-500 hover:text-white transition-all text-slate-600 border border-slate-200">
+              <Linkedin size={18} />
+            </a>
           ) : (
             <a href={adventureData.instagram} target="_blank" rel="noopener noreferrer" className="bg-white/10 backdrop-blur-md p-3 rounded-full hover:bg-pink-500 hover:text-white transition-all text-white/70 border border-white/10">
-               <Instagram size={18} />
-             </a>
+              <Instagram size={18} />
+            </a>
           )}
-          
-          <button 
+
+          <button
             onClick={() => setIsAdventureMode(!isAdventureMode)}
             className="relative w-48 h-12 bg-slate-200/50 dark:bg-slate-800/50 backdrop-blur-xl rounded-full p-1 transition-all duration-500 border border-slate-300 dark:border-slate-700 shadow-inner group"
           >
             <div className={`absolute inset-1 w-24 rounded-full transition-all duration-500 flex items-center justify-center gap-2 ${isAdventureMode ? 'translate-x-[88px] bg-orange-600 text-white' : 'translate-x-0 bg-white text-slate-900 shadow-md'}`}>
               {isAdventureMode ? <Rocket size={16} /> : <Briefcase size={16} />}
               <span className="text-xs font-bold uppercase tracking-wider">
-                {isAdventureMode ? 'Adventure' : 'Pro'}
+                {isAdventureMode ? 'Hobbies' : 'Pro'}
               </span>
             </div>
             <div className="flex justify-between px-6 items-center h-full text-[10px] font-bold text-slate-400 uppercase tracking-tighter pointer-events-none">
               <span>Pro</span>
-              <span>Adv</span>
+              <span>Hobbies</span>
             </div>
           </button>
         </div>
@@ -590,17 +590,17 @@ const App: React.FC = () => {
       <header className={`relative h-screen flex items-center justify-center overflow-hidden ${isAdventureMode ? 'text-white' : 'text-slate-900'}`}>
         <div className="absolute inset-0 -z-10 opacity-30">
           <Canvas>
-             <ambientLight intensity={0.5} />
-             <DreiFloat speed={2}>
-                <Sphere args={[1, 32, 32]} position={[2, 1, -2]}>
-                   <MeshDistortMaterial color={isAdventureMode ? '#ff9900' : '#3b82f6'} speed={2} distort={0.4} />
-                </Sphere>
-             </DreiFloat>
-             <DreiFloat speed={3}>
-                <Sphere args={[0.5, 32, 32]} position={[-2, -1, -3]}>
-                   <MeshDistortMaterial color={isAdventureMode ? '#ff0055' : '#94a3b8'} speed={3} distort={0.6} />
-                </Sphere>
-             </DreiFloat>
+            <ambientLight intensity={0.5} />
+            <DreiFloat speed={2}>
+              <Sphere args={[1, 32, 32]} position={[2, 1, -2]}>
+                <MeshDistortMaterial color={isAdventureMode ? '#ff9900' : '#3b82f6'} speed={2} distort={0.4} />
+              </Sphere>
+            </DreiFloat>
+            <DreiFloat speed={3}>
+              <Sphere args={[0.5, 32, 32]} position={[-2, -1, -3]}>
+                <MeshDistortMaterial color={isAdventureMode ? '#ff0055' : '#94a3b8'} speed={3} distort={0.6} />
+              </Sphere>
+            </DreiFloat>
           </Canvas>
         </div>
 
@@ -617,22 +617,22 @@ const App: React.FC = () => {
             )}
           </h1>
           <p className="text-xl md:text-3xl text-slate-500 dark:text-white/40 max-w-3xl mx-auto font-light leading-relaxed">
-            {isAdventureMode 
+            {isAdventureMode
               ? "Exploring the vertical world through paragliding, high-speed carving, and FPV drone engineering."
               : "Senior Frontend Engineer specializing in high-performance React architectures and premium digital aesthetics."
             }
           </p>
           <div className="flex gap-4 justify-center pt-8">
-             <button 
-                onClick={() => {
-                  const id = isAdventureMode ? 'adventure-content' : 'about';
-                  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className={`flex items-center gap-2 px-10 py-5 rounded-full font-bold transition-all transform hover:scale-105 shadow-2xl ${isAdventureMode ? 'bg-white text-slate-950 shadow-white/10' : 'bg-slate-900 text-white shadow-slate-900/20'}`}
-             >
-                Dive In
-                <ChevronDown size={20} />
-             </button>
+            <button
+              onClick={() => {
+                const id = isAdventureMode ? 'adventure-content' : 'about';
+                document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className={`flex items-center gap-2 px-10 py-5 rounded-full font-bold transition-all transform hover:scale-105 shadow-2xl ${isAdventureMode ? 'bg-white text-slate-950 shadow-white/10' : 'bg-slate-900 text-white shadow-slate-900/20'}`}
+            >
+              Dive In
+              <ChevronDown size={20} />
+            </button>
           </div>
         </div>
 
