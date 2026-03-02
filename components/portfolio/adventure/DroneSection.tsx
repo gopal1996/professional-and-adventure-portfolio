@@ -1,7 +1,7 @@
-import React, { Suspense } from 'react';
+import { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
-import { Wind } from 'lucide-react';
+import { Wind, ExternalLink } from 'lucide-react';
 
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { DroneScene } from '@/components/scenes/DroneScene';
@@ -31,10 +31,11 @@ export function DroneSection() {
       <div className="order-1 md:order-2 h-[400px] md:h-[600px] bg-slate-900 rounded-3xl overflow-hidden relative shadow-2xl shadow-green-500/10">
         <Canvas>
           <PerspectiveCamera makeDefault position={[0, 0, 5]} />
-          <ambientLight intensity={0.4} />
-          <pointLight position={[10, 10, 10]} intensity={1.5} />
+          <ambientLight intensity={1.5} />
+          <pointLight position={[10, 10, 10]} intensity={2} />
+          <pointLight position={[-10, -10, -10]} intensity={0.5} />
           <Suspense fallback={null}>
-            <DroneScene />
+            {hobby.modelPath && <DroneScene modelPath={hobby.modelPath} />}
           </Suspense>
           <OrbitControls enableZoom={false} />
         </Canvas>
@@ -46,8 +47,18 @@ export function DroneSection() {
             READY FOR TAKEOFF
           </div>
         </div>
+        {hobby.attribution && (
+          <a
+            href={hobby.attribution.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute bottom-4 left-4 flex items-center gap-1.5 text-white/30 hover:text-white/60 transition-colors text-xs"
+          >
+            <ExternalLink size={10} />
+            {hobby.attribution.name}
+          </a>
+        )}
       </div>
     </section>
   );
 }
-

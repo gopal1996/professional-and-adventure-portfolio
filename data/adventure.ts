@@ -10,7 +10,12 @@ const adventureData: AdventureData = {
       "description": "Bringing digital blueprints to life. I specialize in mechanical functional parts and custom drone components using various materials from PLA to Carbon Fiber PETG.",
       "details": ["Prusa i3 MK3S+", "PETG/PLA Expert", "Custom Part Engineering"],
       "icon": "Box",
-      "color": "bg-blue-500"
+      "color": "bg-blue-500",
+      "modelPath": "/models/printer.glb",
+      "attribution": {
+        "name": "Ultimaker 3 by Brian Yu [CC-BY] via Poly Pizza",
+        "url": "https://poly.pizza/m/9E_ItHeURbb"
+      }
     },
     {
       "id": "drones",
@@ -18,7 +23,12 @@ const adventureData: AdventureData = {
       "description": "Engineering flight. From custom build frames to cinematic flight footage, I love the intersection of aerodynamics and embedded systems.",
       "details": ["5-inch Freestyle", "Sub-250g Long Range", "Cinewhoop", "DJI O3 Air Unit"],
       "icon": "Wind",
-      "color": "bg-red-500"
+      "color": "bg-red-500",
+      "modelPath": "/models/Drone.glb",
+      "attribution": {
+        "name": "Drone by NateGazzard [CC-BY] via Poly Pizza",
+        "url": "https://poly.pizza/m/DNbUoMtG3H"
+      }
     },
     {
       "id": "pcbuild",
@@ -42,7 +52,12 @@ const adventureData: AdventureData = {
       "description": "Hike and Fly expert. Finding the perfect thermal and soaring above the clouds provides a perspective no computer screen can ever match.",
       "details": ["Hike and Fly", "Thermal Soaring", "Wing Control Expert"],
       "icon": "Plane",
-      "color": "bg-cyan-500"
+      "color": "bg-cyan-500",
+      "modelPath": "/models/Parachute.glb",
+      "attribution": {
+        "name": "Parachute by Poly by Google [CC-BY] via Poly Pizza",
+        "url": "https://poly.pizza/m/3Z7vJ96JIEB"
+      }
     },
     {
       "id": "skiing",
@@ -50,7 +65,12 @@ const adventureData: AdventureData = {
       "description": "Chasing the powder. From carving black diamonds to backcountry exploration, winters are for the mountains.",
       "details": ["Freeride", "Backcountry Exploration", "Black Diamonds"],
       "icon": "Snowflake",
-      "color": "bg-indigo-500"
+      "color": "bg-indigo-500",
+      "modelPath": "/models/Skier.glb",
+      "attribution": {
+        "name": "Skier by apelab [CC-BY] via Poly Pizza",
+        "url": "https://poly.pizza/m/6IOZN0Q6lHt"
+      }
     },
     {
       "id": "surfing",

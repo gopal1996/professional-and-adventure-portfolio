@@ -1,7 +1,11 @@
-import React, { useMemo, useRef } from 'react';
+import { useMemo, useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { Float as DreiFloat, Stars } from '@react-three/drei';
+import { useGLTF, Stars } from '@react-three/drei';
 import * as THREE from 'three';
+
+interface DroneSceneProps {
+  modelPath: string;
+}
 
 function WindResistance() {
   const count = 120;
@@ -52,7 +56,8 @@ function WindResistance() {
   );
 }
 
-export function DroneScene() {
+export function DroneScene({ modelPath }: DroneSceneProps) {
+  const { scene } = useGLTF(modelPath);
   const droneRef = useRef<THREE.Group>(null);
 
   useFrame((state) => {
@@ -62,103 +67,25 @@ export function DroneScene() {
       const targetZ = Math.cos(t * 0.4) * 1.5;
       const targetY = Math.sin(t * 1.1) * 0.4;
 
-      droneRef.current.position.x = THREE.MathUtils.lerp(
-        droneRef.current.position.x,
-        targetX,
-        0.05,
-      );
-      droneRef.current.position.z = THREE.MathUtils.lerp(
-        droneRef.current.position.z,
-        targetZ,
-        0.05,
-      );
-      droneRef.current.position.y = THREE.MathUtils.lerp(
-        droneRef.current.position.y,
-        targetY,
-        0.05,
-      );
+      droneRef.current.position.x = THREE.MathUtils.lerp(droneRef.current.position.x, targetX, 0.05);
+      droneRef.current.position.z = THREE.MathUtils.lerp(droneRef.current.position.z, targetZ, 0.05);
+      droneRef.current.position.y = THREE.MathUtils.lerp(droneRef.current.position.y, targetY, 0.05);
 
-      const roll = Math.sin(t * 0.7) * -0.5;
-      droneRef.current.rotation.z = THREE.MathUtils.lerp(
-        droneRef.current.rotation.z,
-        roll,
-        0.05,
-      );
-
-      const pitch = Math.cos(t * 0.4) * 0.3;
-      droneRef.current.rotation.x = THREE.MathUtils.lerp(
-        droneRef.current.rotation.x,
-        pitch,
-        0.05,
-      );
-
-      droneRef.current.rotation.y = THREE.MathUtils.lerp(
-        droneRef.current.rotation.y,
-        Math.sin(t * 0.35) * 0.4,
-        0.03,
-      );
+      droneRef.current.rotation.z = THREE.MathUtils.lerp(droneRef.current.rotation.z, Math.sin(t * 0.7) * -0.5, 0.05);
+      droneRef.current.rotation.x = THREE.MathUtils.lerp(droneRef.current.rotation.x, Math.cos(t * 0.4) * 0.3, 0.05);
+      droneRef.current.rotation.y = THREE.MathUtils.lerp(droneRef.current.rotation.y, Math.sin(t * 0.35) * 0.4, 0.03);
     }
   });
 
   return (
     <group>
       <WindResistance />
-      <group ref={droneRef} scale={1.2}>
-        <mesh>
-          <boxGeometry args={[2, 0.1, 0.2]} />
-          <meshStandardMaterial color="#222" metalness={0.8} roughness={0.2} />
-        </mesh>
-        <mesh rotation={[0, Math.PI / 2, 0]}>
-          <boxGeometry args={[2, 0.1, 0.2]} />
-          <meshStandardMaterial color="#222" metalness={0.8} roughness={0.2} />
-        </mesh>
-        {[
-          [1, 1],
-          [1, -1],
-          [-1, 1],
-          [-1, -1],
-        ].map((pos, i) => (
-          <group key={i} position={[pos[0], 0.1, pos[1]]}>
-            <mesh>
-              <cylinderGeometry args={[0.1, 0.1, 0.2]} />
-              <meshStandardMaterial color="#444" metalness={1} />
-            </mesh>
-            <DreiFloat speed={20} rotationIntensity={0} floatIntensity={0}>
-              <mesh rotation={[0, 0, 0]}>
-                <boxGeometry args={[0.9, 0.01, 0.08]} />
-                <meshStandardMaterial
-                  color="#00ff00"
-                  transparent
-                  opacity={0.4}
-                  blending={THREE.AdditiveBlending}
-                />
-              </mesh>
-            </DreiFloat>
-          </group>
-        ))}
-        <mesh position={[0, 0.2, 0.5]}>
-          <boxGeometry args={[0.3, 0.3, 0.4]} />
-          <meshStandardMaterial color="#111" />
-          <mesh position={[0, 0, 0.2]}>
-            <sphereGeometry args={[0.08, 8, 8]} />
-            <meshStandardMaterial
-              color="#000"
-              emissive="#00ff00"
-              emissiveIntensity={0.5}
-            />
-          </mesh>
-        </mesh>
-        <Stars
-          radius={100}
-          depth={50}
-          count={2000}
-          factor={4}
-          saturation={0}
-          fade
-          speed={1}
-        />
+      <Stars radius={100} depth={50} count={2000} factor={4} saturation={0} fade speed={1} />
+      <group ref={droneRef} scale={3}>
+        <primitive object={scene} />
       </group>
     </group>
   );
 }
 
+useGLTF.preload('/models/Drone.glb');

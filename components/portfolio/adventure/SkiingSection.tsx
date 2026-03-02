@@ -1,7 +1,7 @@
-import React, { Suspense } from 'react';
+import { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { PerspectiveCamera } from '@react-three/drei';
-import { Snowflake } from 'lucide-react';
+import { ExternalLink, Snowflake } from 'lucide-react';
 
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { SkiingScene } from '@/components/scenes/SkiingScene';
@@ -15,10 +15,11 @@ export function SkiingSection() {
       <div className="h-[400px] md:h-[600px] bg-slate-900 rounded-3xl overflow-hidden relative border border-white/5">
         <Canvas>
           <PerspectiveCamera makeDefault position={[0, 0, 5]} />
-          <ambientLight intensity={0.5} />
-          <pointLight position={[10, 10, 10]} />
+          <ambientLight intensity={1.5} />
+          <pointLight position={[10, 10, 10]} intensity={1} />
+          <pointLight position={[-10, -10, -10]} intensity={0.5} />
           <Suspense fallback={null}>
-            <SkiingScene />
+            {hobby.modelPath && <SkiingScene modelPath={hobby.modelPath} />}
           </Suspense>
         </Canvas>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center pointer-events-none">
@@ -26,6 +27,17 @@ export function SkiingSection() {
             CARVE
           </div>
         </div>
+        {hobby.attribution && (
+          <a
+            href={hobby.attribution.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute bottom-4 right-4 flex items-center gap-1.5 text-white/30 hover:text-white/60 transition-colors text-xs"
+          >
+            <ExternalLink size={10} />
+            {hobby.attribution.name}
+          </a>
+        )}
       </div>
       <div className="space-y-8">
         <SectionHeading title={hobby.title} icon={<Snowflake size={24} />} dark />
@@ -43,4 +55,3 @@ export function SkiingSection() {
     </section>
   );
 }
-

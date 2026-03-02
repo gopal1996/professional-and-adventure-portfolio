@@ -37,6 +37,11 @@ export interface ProfessionalData {
   certifications: ItemWithThumbnail[];
 }
 
+export interface Attribution {
+  name: string;
+  url: string;
+}
+
 export interface AdventureItem {
   id: string;
   title: string;
@@ -44,6 +49,8 @@ export interface AdventureItem {
   details: string[];
   icon: string;
   color: string;
+  modelPath?: string;
+  attribution?: Attribution;
 }
 
 export interface AdventureData {

@@ -1,7 +1,7 @@
-import React, { Suspense } from 'react';
+import { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
-import { Activity, Box } from 'lucide-react';
+import { Activity, Box, ExternalLink } from 'lucide-react';
 
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { PrinterScene } from '@/components/scenes/PrinterScene';
@@ -14,11 +14,12 @@ export function PrintingSection() {
     <section className="min-h-screen grid md:grid-cols-2 gap-12 px-10 py-24 items-center border-b border-white/5">
       <div className="h-[400px] md:h-[600px] bg-slate-900 rounded-3xl overflow-hidden relative shadow-2xl shadow-blue-500/10">
         <Canvas shadows>
-          <PerspectiveCamera makeDefault position={[0, 2, 5]} />
-          <ambientLight intensity={0.5} />
-          <pointLight position={[10, 10, 10]} intensity={1.5} />
+          <PerspectiveCamera makeDefault position={[0, 2, 8]} />
+          <ambientLight intensity={1.5} />
+          <pointLight position={[10, 10, 10]} intensity={2} />
+          <pointLight position={[-10, -10, -10]} intensity={0.5} />
           <Suspense fallback={null}>
-            <PrinterScene />
+            {hobby.modelPath && <PrinterScene modelPath={hobby.modelPath} />}
           </Suspense>
           <OrbitControls enableZoom={false} />
         </Canvas>
@@ -26,6 +27,17 @@ export function PrintingSection() {
           <Activity size={14} />
           Print In Progress
         </div>
+        {hobby.attribution && (
+          <a
+            href={hobby.attribution.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute bottom-4 right-4 flex items-center gap-1.5 text-white/30 hover:text-white/60 transition-colors text-xs"
+          >
+            <ExternalLink size={10} />
+            {hobby.attribution.name}
+          </a>
+        )}
       </div>
       <div className="space-y-8">
         <SectionHeading title={hobby.title} icon={<Box size={24} />} dark />
@@ -43,4 +55,3 @@ export function PrintingSection() {
     </section>
   );
 }
-
