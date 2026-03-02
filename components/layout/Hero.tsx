@@ -12,9 +12,8 @@ export function Hero({
 }) {
   return (
     <header
-      className={`relative h-screen flex items-center justify-center overflow-hidden ${
-        isAdventureMode ? 'text-white' : 'text-slate-900'
-      }`}
+      className={`relative h-screen flex items-center justify-center overflow-hidden ${isAdventureMode ? 'text-white' : 'text-slate-900'
+        }`}
     >
       <div className="absolute inset-0 -z-10 opacity-30">
         <Canvas>
@@ -42,14 +41,13 @@ export function Hero({
 
       <div className="text-center space-y-6 max-w-4xl px-6 relative z-10">
         <div
-          className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold uppercase tracking-widest ${
-            isAdventureMode
+          className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold uppercase tracking-widest ${isAdventureMode
               ? 'bg-orange-500/20 text-orange-400 border border-orange-500/30'
               : 'bg-blue-100 text-blue-600 border border-blue-200'
-          }`}
+            }`}
         >
           {isAdventureMode ? <Wind size={16} /> : <Code size={16} />}
-          {isAdventureMode ? 'Chasing Adrenaline' : 'Building the Future UI'}
+          {isAdventureMode ? 'Chasing Adrenaline' : 'Building the Future'}
         </div>
         <h1 className="text-6xl md:text-9xl font-black font-display leading-tight tracking-tighter">
           {isAdventureMode ? (
@@ -76,11 +74,10 @@ export function Hero({
         <div className="flex gap-4 justify-center pt-8">
           <button
             onClick={onDiveIn}
-            className={`flex items-center gap-2 px-10 py-5 rounded-full font-bold transition-all transform hover:scale-105 shadow-2xl ${
-              isAdventureMode
+            className={`flex items-center gap-2 px-10 py-5 rounded-full font-bold transition-all transform hover:scale-105 shadow-2xl ${isAdventureMode
                 ? 'bg-white text-slate-950 shadow-white/10'
                 : 'bg-slate-900 text-white shadow-slate-900/20'
-            }`}
+              }`}
           >
             Dive In
             <ChevronDown size={20} />

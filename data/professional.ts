@@ -20,7 +20,9 @@ const professionalData: ProfessionalData = {
       "startDate": "Dec 2024",
       "endDate": "Present",
       "currentlyWorking": true,
-      "description": `- Led the complete migration of the legacy application to **React Router 7** with **server-rendered components**, executing an iterative page-by-page rollout with **zero downtime** and a seamless transition from the legacy app.
+      "description": `- Pioneered an **AI-driven development pipeline**: once a PM publishes a feature spec in **Confluence**, the system auto-generates an **API contract** from the doc, scaffolds the implementation code, and converts **Figma designs to UI code** — accuracy varies with UI complexity, but the workflow eliminates most boilerplate and shifts the engineer's role to **review & refinement** rather than authoring.
+- Designed and implemented a **Token Optimization Strategy** to reduce LLM inference costs, evaluating multiple approaches: **prompt compression** (removing redundant context), **semantic caching** (reusing responses for similar inputs), **chunked context windows** (feeding only the relevant doc section per request), and **output schema constraints** (structured JSON responses to minimize token bloat). Applied the optimal mix per use-case to balance cost, latency, and accuracy.
+- Led the complete migration of the legacy application to **React Router 7** with **server-rendered components**, executing an iterative page-by-page rollout with **zero downtime** and a seamless transition from the legacy app.
 - Owned infrastructure and **Docker modernization**, implementing **multi-stage Docker builds** to support both legacy and new applications.
 - Set up **end-to-end observability**: error logging, RUM metrics, rate limiting, and reliability improvements across the stack.
 - Standardized and modernized the **Crowdin** translation workflow, fixing incorrect **German ITIL** terminology and creating an **ITIL-compliant multilingual glossary**.
