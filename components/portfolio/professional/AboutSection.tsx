@@ -5,27 +5,32 @@ import professionalData from '@/data/professional';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { MarkdownText } from '@/components/ui/MarkdownText';
 
+function getExperienceYears(): number {
+  const firstJob = professionalData.experience[professionalData.experience.length - 1];
+  const monthNames = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const [mon, yr] = firstJob.startDate.split(' ');
+  const start = new Date(parseInt(yr), monthNames.indexOf(mon));
+  const now = new Date();
+  const months = (now.getFullYear() - start.getFullYear()) * 12 + (now.getMonth() - start.getMonth());
+  return Math.round((months / 12) * 10) / 10;
+}
+
 export function AboutSection() {
+  const experienceYears = getExperienceYears();
   return (
     <section id="about" className="grid md:grid-cols-2 gap-12 items-center">
       <div>
         <SectionHeading title="About Me" icon={<Code size={24} />} />
         <MarkdownText className="text-xl text-slate-600 leading-relaxed">
-          {professionalData.about}
+          {professionalData.about.replace('{{experienceYears}}', String(experienceYears))}
         </MarkdownText>
         <div className="mt-8 flex gap-4">
           <div className="text-center p-4 bg-white rounded-xl shadow-sm border border-slate-100 min-w-[120px]">
             <div className="text-3xl font-bold text-blue-600">
-              {professionalData.experienceYears}
+              {experienceYears}
             </div>
             <div className="text-sm text-slate-500 uppercase tracking-wider font-semibold">
               Experience
-            </div>
-          </div>
-          <div className="text-center p-4 bg-white rounded-xl shadow-sm border border-slate-100 min-w-[120px]">
-            <div className="text-3xl font-bold text-blue-600">50+</div>
-            <div className="text-sm text-slate-500 uppercase tracking-wider font-semibold">
-              Projects
             </div>
           </div>
         </div>

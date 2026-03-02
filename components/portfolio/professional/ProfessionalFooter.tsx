@@ -7,7 +7,7 @@ export function ProfessionalFooter() {
   return (
     <footer className="pt-20 border-t border-slate-200 text-center text-slate-500">
       <p>
-        © 2024 {professionalData.name}. Built with React, Three.js & Tailwind
+        © {new Date().getFullYear()} {professionalData.name}. Built with React, Three.js & Tailwind
         CSS.
       </p>
       <div className="flex justify-center gap-6 mt-6 pb-12">

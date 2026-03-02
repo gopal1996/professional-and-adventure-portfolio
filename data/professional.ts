@@ -4,7 +4,7 @@ import { ProfessionalData } from '../types';
 const professionalData: ProfessionalData = {
   "name": "Gopalakrishnan C",
   "role": "Frontend Lead Engineer",
-  "about": `**Tech Lead** with **8+ years** of building scalable SaaS products, modernizing legacy systems, and mentoring engineering teams.
+  "about": `**Tech Lead** with **{{experienceYears}} years** of building scalable SaaS products, modernizing legacy systems, and mentoring engineering teams.
 
 - **Frontend specialisation**: React, TypeScript, micro-frontends, design systems, high-performance UI.
 - **Platform & DevOps**: Docker, Kubernetes, GCP, CI/CD, observability and reliability.
@@ -75,19 +75,19 @@ const professionalData: ProfessionalData = {
       "title": "Event Bubbling and Event Capturing",
       "link": "https://www.youtube.com/watch?v=3k__0LmsdWo",
       "description": "Understanding event propagation in JavaScript",
-      "thumbnail": "https://www.youtube.com/watch?v=3k__0LmsdWo"
+      "thumbnail": "https://res.cloudinary.com/gopal1996/image/upload/v1772476185/c_mOISn4B_whhyjl.png"
     },
     {
       "title": "Microfrontend - Module Federation",
       "link": "https://www.youtube.com/watch?v=4ot0ca1yBDU&t=3580s",
       "description": "Building scalable micro-frontends using Module Federation",
-      "thumbnail": "https://picsum.photos/seed/talk2/600/400"
+      "thumbnail": "https://res.cloudinary.com/gopal1996/image/upload/v1772476139/1_GkQnFwdbkwNqdEf9yHhTyw_ef8ez0.jpg"
     },
     {
       "title": "Docker - Under the hood",
       "link": "https://www.youtube.com/watch?v=ryUW-EmRE6E&t=455s",
       "description": "Deep dive into Docker internals and containerization",
-      "thumbnail": "https://picsum.photos/seed/talk3/600/400"
+      "thumbnail": "https://res.cloudinary.com/gopal1996/image/upload/v1772476085/ab2wz8HlQAmNj1CLloZq_alze88.png"
     }
   ],
   "projects": [
@@ -95,7 +95,7 @@ const professionalData: ProfessionalData = {
       "title": "Resume Builder",
       "link": "https://e-resume.vercel.app/",
       "description": "Open source resume builder application",
-      "thumbnail": "https://picsum.photos/seed/project1/600/400"
+      "thumbnail": "https://e-resume.vercel.app/resume.webp"
     },
     {
       "title": "Pixel Art",
@@ -107,7 +107,7 @@ const professionalData: ProfessionalData = {
       "title": "ClearFrontend",
       "link": "https://clearfrontend.vercel.app/",
       "description": "Open source frontend development resources",
-      "thumbnail": "https://picsum.photos/seed/project3/600/400"
+      "thumbnail": "https://clearfrontend.vercel.app/cfe-logo.svg"
     }
   ],
   "blogs": [
