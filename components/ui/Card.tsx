@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { cn } from '@/lib/utils';
+
 export function Card({
   children,
   className,
@@ -9,7 +11,10 @@ export function Card({
 }) {
   return (
     <div
-      className={`bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow duration-300 ${className ?? ''}`}
+      className={cn(
+        'bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow duration-300',
+        className,
+      )}
     >
       {children}
     </div>
