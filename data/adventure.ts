@@ -7,7 +7,7 @@ const adventureData: AdventureData = {
     {
       "id": "3dprint",
       "title": "3D Printing",
-      "description": "Creating physical objects from digital dreams.",
+      "description": "Bringing digital blueprints to life. I specialize in mechanical functional parts and custom drone components using various materials from PLA to Carbon Fiber PETG.",
       "details": ["Prusa i3 MK3S+", "PETG/PLA Expert", "Custom Part Engineering"],
       "icon": "Box",
       "color": "bg-blue-500"
@@ -15,8 +15,8 @@ const adventureData: AdventureData = {
     {
       "id": "drones",
       "title": "Drones",
-      "description": "FPV racing and cinematic aerial photography.",
-      "details": ["5-inch Freestyle Quad", "DJI Avata", "Part 107 Licensed"],
+      "description": "Engineering flight. From custom build frames to cinematic flight footage, I love the intersection of aerodynamics and embedded systems.",
+      "details": ["5-inch Freestyle", "Sub-250g Long Range", "Cinewhoop", "DJI O3 Air Unit"],
       "icon": "Wind",
       "color": "bg-red-500"
     },
@@ -39,7 +39,7 @@ const adventureData: AdventureData = {
     {
       "id": "paragliding",
       "title": "Paragliding",
-      "description": "Touching the sky and riding the thermals.",
+      "description": "Hike and Fly expert. Finding the perfect thermal and soaring above the clouds provides a perspective no computer screen can ever match.",
       "details": ["Hike and Fly", "Thermal Soaring", "Wing Control Expert"],
       "icon": "Plane",
       "color": "bg-cyan-500"
@@ -47,7 +47,7 @@ const adventureData: AdventureData = {
     {
       "id": "skiing",
       "title": "Skiing",
-      "description": "Chasing the powder in high-altitude terrain.",
+      "description": "Chasing the powder. From carving black diamonds to backcountry exploration, winters are for the mountains.",
       "details": ["Freeride", "Backcountry Exploration", "Black Diamonds"],
       "icon": "Snowflake",
       "color": "bg-indigo-500"

@@ -5,6 +5,9 @@ import { Activity, Box } from 'lucide-react';
 
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { PrinterScene } from '@/components/scenes/PrinterScene';
+import adventureData from '@/data/adventure';
+
+const hobby = adventureData.hobbies.find((h) => h.id === '3dprint')!;
 
 export function PrintingSection() {
   return (
@@ -25,21 +28,16 @@ export function PrintingSection() {
         </div>
       </div>
       <div className="space-y-8">
-        <SectionHeading title="3D Printing" icon={<Box size={24} />} dark />
+        <SectionHeading title={hobby.title} icon={<Box size={24} />} dark />
         <p className="text-2xl text-white/60 leading-relaxed font-light">
-          Bringing digital blueprints to life. I specialize in mechanical
-          functional parts and custom drone components using various materials
-          from PLA to Carbon Fiber PETG.
+          {hobby.description}
         </p>
-        <div className="grid grid-cols-2 gap-4">
-          <div className="p-6 bg-white/5 border border-white/10 rounded-2xl">
-            <h4 className="text-blue-400 font-bold mb-2">Build Volume</h4>
-            <p className="text-white/80">300x300x400mm</p>
-          </div>
-          <div className="p-6 bg-white/5 border border-white/10 rounded-2xl">
-            <h4 className="text-blue-400 font-bold mb-2">Main Rig</h4>
-            <p className="text-white/80">Prusa MK3S+</p>
-          </div>
+        <div className="flex flex-wrap gap-3">
+          {hobby.details.map((tag) => (
+            <span key={tag} className="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-sm font-semibold text-white/40 italic">
+              #{tag}
+            </span>
+          ))}
         </div>
       </div>
     </section>

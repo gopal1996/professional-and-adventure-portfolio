@@ -5,6 +5,9 @@ import { Activity, Plane } from 'lucide-react';
 
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { ParaglideScene } from '@/components/scenes/ParaglideScene';
+import adventureData from '@/data/adventure';
+
+const hobby = adventureData.hobbies.find((h) => h.id === 'paragliding')!;
 
 export function ParaglidingSection() {
   return (
@@ -25,10 +28,9 @@ export function ParaglidingSection() {
       </div>
       <div className="relative z-10 grid md:grid-cols-2 gap-20 items-center h-full">
         <div className="space-y-8">
-          <SectionHeading title="Paragliding" icon={<Plane size={24} />} dark />
+          <SectionHeading title={hobby.title} icon={<Plane size={24} />} dark />
           <p className="text-2xl text-white/70 leading-relaxed font-light">
-            Hike and Fly expert. Finding the perfect thermal and soaring above
-            the clouds provides a perspective no computer screen can ever match.
+            {hobby.description}
           </p>
           <button className="flex items-center gap-4 bg-orange-600 px-8 py-4 rounded-full font-bold hover:bg-orange-700 transition-all shadow-xl shadow-orange-900/20">
             View Flight Logs <Activity size={20} />
