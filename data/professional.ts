@@ -4,7 +4,11 @@ import { ProfessionalData } from '../types';
 const professionalData: ProfessionalData = {
   "name": "Gopalakrishnan C",
   "role": "Frontend Lead Engineer",
-  "about": "Tech Lead with 8+ years of building scalable SaaS products, modernizing legacy systems, and mentoring engineering teams. Expert in React, micro-frontends, cloud services, and AI-driven development",
+  "about": `**Tech Lead** with **8+ years** of building scalable SaaS products, modernizing legacy systems, and mentoring engineering teams.
+
+- **Frontend specialisation**: React, TypeScript, micro-frontends, design systems, high-performance UI.
+- **Platform & DevOps**: Docker, Kubernetes, GCP, CI/CD, observability and reliability.
+- **AI-driven workflows**: integrating LLMs and automation into engineering, translation, and operational pipelines.`,
   "email": "krishnan.gopal34@gmail.com",
   "linkedin": "https://www.linkedin.com/in/gopal1996/",
   "experienceYears": "8",
@@ -16,7 +20,12 @@ const professionalData: ProfessionalData = {
       "startDate": "Dec 2024",
       "endDate": "Present",
       "currentlyWorking": true,
-      "description": "Led the complete migration of the legacy application to React Router 7 with server-rendered components, executing an iterative page-by-page rollout with zero downtime and a seamless transition for users from the old app to the new platform. Owned the full infrastructure and Docker modernization, implementing multi-stage Docker builds to support both legacy and new applications. Set up end-to-end error logging, RUM metrics, rate limiting, and improved overall observability and reliability of the system. Standardized and modernized the entire translation workflow in Crowdin, fixing incorrect German translations that were inconsistent with ITIL terminology. Through deep R&D, AI-based reasoning, and close collaboration with translation vendors and the Crowdin team, created an ITIL-compliant multilingual glossary and automated the full translation lifecycle (AI translation → AI approval → AI QA checks). Successfully corrected and deployed 50,000+ words, earning appreciation from customers and recognition in the community. Owned the Workflow module, developing multiple key features end-to-end, mentoring other teams on feature rollout, and conducting code reviews to maintain engineering quality and consistency across modules."
+      "description": `- Led the complete migration of the legacy application to **React Router 7** with **server-rendered components**, executing an iterative page-by-page rollout with **zero downtime** and a seamless transition from the legacy app.
+- Owned infrastructure and **Docker modernization**, implementing **multi-stage Docker builds** to support both legacy and new applications.
+- Set up **end-to-end observability**: error logging, RUM metrics, rate limiting, and reliability improvements across the stack.
+- Standardized and modernized the **Crowdin** translation workflow, fixing incorrect **German ITIL** terminology and creating an **ITIL-compliant multilingual glossary**.
+- Automated the translation lifecycle (**AI translation → AI approval → AI QA checks**), successfully correcting and deploying **50,000+ words**, earning appreciation from customers and recognition in the community.
+- Owned the **Workflow module**, developing key features end-to-end, mentoring teams on feature rollout, and conducting code reviews to maintain engineering quality.`
     },
     {
       "title": "Kissflow",
@@ -25,7 +34,12 @@ const professionalData: ProfessionalData = {
       "startDate": "Jan 2021",
       "endDate": "Dec 2024",
       "currentlyWorking": false,
-      "description": "Core member of Kissflow's frontend build system, contributing across 15+ micro-frontends using Module Federation and PNPM to improve performance and developer efficiency. Led the frontend release team, managing cross-dependencies, removing blockers, coordinating with product managers, and mentoring developers to deliver industry-standard features. Drove tech-stack modernisation, introducing new tools and practices to enhance developer experience; independently delivered full-stack features when required. Developed critical modules such as the PDF generation system, significantly increasing product revenue and customer acquisition, while also leading private-cloud development efforts, self hosted a real-time database module to avoid vendor lock-in. Designed scalable cloud and DevOps solutions, creating a CD pipeline for artifact transfer across GCP and AWS and collaborating with DevOps teams to build robust cloud architectures."
+      "description": `- Core member of **Kissflow's frontend build system**, contributing across **15+ micro-frontends** using **Module Federation** and **PNPM** to improve performance and developer efficiency.
+- Led the **frontend release team**, managing cross-dependencies, removing blockers, coordinating with PMs, and mentoring developers to deliver high-quality features.
+- Drove **tech-stack modernization**, introducing new tools and practices to enhance developer experience; independently delivered **full-stack features** when required.
+- Developed critical modules such as the **PDF generation system**, significantly increasing product revenue and customer acquisition.
+- Led **private-cloud development** efforts, self-hosting a **real-time database** module to avoid vendor lock-in.
+- Designed scalable **cloud and DevOps** solutions, creating a **CD pipeline** for artifact transfer across **GCP** and **AWS** and collaborating with DevOps teams to build robust cloud architectures.`
     },
     {
       "title": "Infosys",
@@ -34,7 +48,8 @@ const professionalData: ProfessionalData = {
       "startDate": "Jun 2020",
       "endDate": "Jan 2021",
       "currentlyWorking": false,
-      "description": "Created complex UI components within the time period and was responsible for creating a high-fidelity design. Created third-party components like ngx-treeview and Ag-Grid in Angular and React to match the exact design as per the mock-up."
+      "description": `- Built complex **UI components** under tight timelines and was responsible for producing **high-fidelity** implementations.
+- Implemented third-party components like **ngx-treeview** and **AG Grid** in **Angular** and **React** to match exact design specifications from mock-ups.`
     },
     {
       "title": "Capgemini",
@@ -43,7 +58,9 @@ const professionalData: ProfessionalData = {
       "startDate": "Jun 2017",
       "endDate": "May 2020",
       "currentlyWorking": false,
-      "description": "Created and designed a mashup web application to gain insights from various BI tools like Tableau, Spotfire, OBIEE. Accelerated business analyses under a single umbrella which in turn saved end-user time by 65%. Automated manual tasks for day-to-day jobs by using Python Selenium."
+      "description": `- Created and designed a **mashup web application** to gain insights from BI tools like **Tableau**, **Spotfire**, and **OBIEE**.
+- Accelerated business analysis by consolidating workflows under a single UI, reducing end-user time by **65%**.
+- Automated manual day-to-day tasks using **Python Selenium**, improving reliability and freeing up analyst time.`
     }
   ],
   "schooling": [

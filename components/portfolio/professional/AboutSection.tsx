@@ -3,15 +3,16 @@ import { Code } from 'lucide-react';
 
 import professionalData from '@/data/professional';
 import { SectionHeading } from '@/components/ui/SectionHeading';
+import { MarkdownText } from '@/components/ui/MarkdownText';
 
 export function AboutSection() {
   return (
     <section id="about" className="grid md:grid-cols-2 gap-12 items-center">
       <div>
         <SectionHeading title="About Me" icon={<Code size={24} />} />
-        <p className="text-xl text-slate-600 leading-relaxed">
+        <MarkdownText className="text-xl text-slate-600 leading-relaxed">
           {professionalData.about}
-        </p>
+        </MarkdownText>
         <div className="mt-8 flex gap-4">
           <div className="text-center p-4 bg-white rounded-xl shadow-sm border border-slate-100 min-w-[120px]">
             <div className="text-3xl font-bold text-blue-600">

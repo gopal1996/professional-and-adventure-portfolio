@@ -4,6 +4,7 @@ import { Briefcase } from 'lucide-react';
 import professionalData from '@/data/professional';
 import { Card } from '@/components/ui/Card';
 import { SectionHeading } from '@/components/ui/SectionHeading';
+import { MarkdownText } from '@/components/ui/MarkdownText';
 
 export function ExperienceSection() {
   return (
@@ -21,7 +22,9 @@ export function ExperienceSection() {
             <div className="md:w-3/4">
               <h3 className="text-2xl font-bold mb-1">{exp.designation}</h3>
               <div className="text-xl text-slate-700 mb-4">{exp.title}</div>
-              <p className="text-slate-600">{exp.description}</p>
+              <MarkdownText className="text-slate-600">
+                {exp.description}
+              </MarkdownText>
             </div>
           </Card>
         ))}
