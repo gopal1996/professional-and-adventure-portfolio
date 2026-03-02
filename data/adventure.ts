@@ -36,7 +36,12 @@ const adventureData: AdventureData = {
       "description": "Crafting high-performance workstations for dev and play.",
       "details": ["Custom Water Cooling", "RTX 4090 Setup", "Clean Cable Management"],
       "icon": "Cpu",
-      "color": "bg-purple-500"
+      "color": "bg-purple-500",
+      "modelPath": "/models/pc.glb",
+      "attribution": {
+        "name": "Gaming Computer by Alex Safayan [CC-BY] via Poly Pizza",
+        "url": "https://poly.pizza/m/5cN7W4ufoII"
+      }
     },
     {
       "id": "editing",
