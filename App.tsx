@@ -31,9 +31,6 @@ const App: React.FC = () => {
         }}
       />
 
-      <div id="adventure-content"></div>
-      <div id="pro-content"></div>
-
       <main>
         {isAdventureMode ? <AdventurePortfolio /> : <ProfessionalPortfolio />}
       </main>

@@ -10,7 +10,7 @@ import { TalksSection } from './TalksSection';
 
 export function ProfessionalPortfolio() {
   return (
-    <div className="max-w-6xl mx-auto px-6 py-20 space-y-32">
+    <div id="pro-content" className="max-w-6xl mx-auto px-6 py-20 space-y-32">
       <AboutSection />
       <ExperienceSection />
       <ProjectsSection />

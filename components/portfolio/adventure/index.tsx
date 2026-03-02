@@ -9,7 +9,7 @@ import { SkiingSection } from './SkiingSection';
 
 export function AdventurePortfolio() {
   return (
-    <div className="bg-slate-950 text-white pb-32">
+    <div id="adventure-content" className="bg-slate-950 text-white pb-32">
       <PrintingSection />
       <DroneSection />
       <ParaglidingSection />
