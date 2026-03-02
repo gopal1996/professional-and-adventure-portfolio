@@ -1,20 +1,14 @@
-import React from 'react';
 import { Instagram } from 'lucide-react';
 
 import adventureData from '@/data/adventure';
-import { DroneSection } from './DroneSection';
-import { ParaglidingSection } from './ParaglidingSection';
-import { PrintingSection } from './PrintingSection';
-import { SkiingSection } from './SkiingSection';
+import { HobbySection } from './HobbySection';
 
 export function AdventurePortfolio() {
   return (
     <div id="adventure-content" className="bg-slate-950 text-white pb-32">
-      <PrintingSection />
-      <DroneSection />
-      <ParaglidingSection />
-      <SkiingSection />
-
+      {adventureData.hobbies.map((hobby, index) => (
+        <HobbySection key={hobby.id} hobby={hobby} index={index} />
+      ))}
       <footer className="text-center py-24 border-t border-white/5">
         <h2 className="text-6xl font-display font-black mb-8 text-white/20">
           The Adventure Continues
@@ -32,4 +26,3 @@ export function AdventurePortfolio() {
     </div>
   );
 }
-

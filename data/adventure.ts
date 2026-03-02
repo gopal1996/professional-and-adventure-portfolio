@@ -12,6 +12,10 @@ const adventureData: AdventureData = {
       "icon": "Box",
       "color": "bg-blue-500",
       "modelPath": "/models/printer.glb",
+      "modelScale": 10,
+      "effects": ["spin"],
+      "reversed": false,
+      "badge": "Print In Progress",
       "attribution": {
         "name": "Ultimaker 3 by Brian Yu [CC-BY] via Poly Pizza",
         "url": "https://poly.pizza/m/9E_ItHeURbb"
@@ -25,6 +29,10 @@ const adventureData: AdventureData = {
       "icon": "Wind",
       "color": "bg-red-500",
       "modelPath": "/models/Drone.glb",
+      "modelScale": 3,
+      "effects": ["flight", "wind", "stars"],
+      "reversed": true,
+      "badge": "READY FOR TAKEOFF",
       "attribution": {
         "name": "Drone by NateGazzard [CC-BY] via Poly Pizza",
         "url": "https://poly.pizza/m/DNbUoMtG3H"
@@ -38,6 +46,9 @@ const adventureData: AdventureData = {
       "icon": "Cpu",
       "color": "bg-purple-500",
       "modelPath": "/models/pc.glb",
+      "modelScale": 2,
+      "effects": ["spin"],
+      "reversed": false,
       "attribution": {
         "name": "Gaming Computer by Alex Safayan [CC-BY] via Poly Pizza",
         "url": "https://poly.pizza/m/5cN7W4ufoII"
@@ -49,7 +60,8 @@ const adventureData: AdventureData = {
       "description": "Post-production for adventure vlogs and tech reviews.",
       "details": ["DaVinci Resolve", "Color Grading", "Motion Graphics"],
       "icon": "Video",
-      "color": "bg-pink-500"
+      "color": "bg-pink-500",
+      "reversed": true
     },
     {
       "id": "paragliding",
@@ -59,6 +71,12 @@ const adventureData: AdventureData = {
       "icon": "Plane",
       "color": "bg-cyan-500",
       "modelPath": "/models/Parachute.glb",
+      "modelScale": 0.2,
+      "effects": ["float", "clouds"],
+      "reversed": false,
+      "videoBackground": "https://assets.mixkit.co/videos/preview/mixkit-paraglider-flying-under-the-sun-41312-large.mp4",
+      "ctaLink": "https://app.flygaggle.com/viewRecording?p=eyJ1c2VySWQiOiJpU1ZaWVA3S3FSUXZLblhERUNweTJsQTlJaWgxIiwicmVjb3JkaW5nSWQiOiJpU1ZaLTE3NjYzNzg3NTU1NjAifQ%3D%3D",
+      "ctaLabel": "View Flight Logs",
       "attribution": {
         "name": "Parachute by Poly by Google [CC-BY] via Poly Pizza",
         "url": "https://poly.pizza/m/3Z7vJ96JIEB"
@@ -72,6 +90,11 @@ const adventureData: AdventureData = {
       "icon": "Snowflake",
       "color": "bg-indigo-500",
       "modelPath": "/models/Skier.glb",
+      "modelScale": 0.5,
+      "modelRotation": [-1.5708, -1, -1.5],
+      "effects": ["spin", "sparkles", "snow"],
+      "reversed": false,
+      "watermark": "CARVE",
       "attribution": {
         "name": "Skier by apelab [CC-BY] via Poly Pizza",
         "url": "https://poly.pizza/m/6IOZN0Q6lHt"
@@ -83,7 +106,8 @@ const adventureData: AdventureData = {
       "description": "Catching waves and seeking the perfect barrel.",
       "details": ["Shortboard Action", "Dawn Patrols", "Sustainable Surfboards"],
       "icon": "Waves",
-      "color": "bg-emerald-500"
+      "color": "bg-emerald-500",
+      "reversed": true
     }
   ]
 };

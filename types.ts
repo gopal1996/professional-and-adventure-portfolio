@@ -49,8 +49,20 @@ export interface AdventureItem {
   details: string[];
   icon: string;
   color: string;
+  // 3D model
   modelPath?: string;
+  modelScale?: number;
+  modelRotation?: [number, number, number];
+  effects?: string[];
   attribution?: Attribution;
+  // Section layout
+  reversed?: boolean;
+  videoBackground?: string;
+  ctaLink?: string;
+  ctaLabel?: string;
+  // Canvas overlays
+  badge?: string;
+  watermark?: string;
 }
 
 export interface AdventureData {
