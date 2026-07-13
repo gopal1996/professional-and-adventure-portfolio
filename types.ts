@@ -51,6 +51,8 @@ export interface AdventureItem {
   color: string;
   // 3D model
   modelPath?: string;
+  /** Procedural scene id for hobbies without a GLB (see HobbySection scene registry) */
+  scene?: string;
   modelScale?: number;
   modelRotation?: [number, number, number];
   effects?: string[];

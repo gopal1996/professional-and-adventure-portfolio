@@ -12,8 +12,8 @@ const adventureData: AdventureData = {
       "icon": "Box",
       "color": "bg-blue-500",
       "modelPath": "/models/printer.glb",
-      "modelScale": 10,
-      "effects": ["spin"],
+      "modelScale": 7,
+      "effects": ["spin", "scanline"],
       "reversed": false,
       "badge": "Print In Progress",
       "attribution": {
@@ -30,7 +30,7 @@ const adventureData: AdventureData = {
       "color": "bg-red-500",
       "modelPath": "/models/Drone.glb",
       "modelScale": 3,
-      "effects": ["flight", "wind", "stars"],
+      "effects": ["flight", "wind", "stars", "navlights"],
       "reversed": true,
       "badge": "READY FOR TAKEOFF",
       "attribution": {
@@ -47,7 +47,7 @@ const adventureData: AdventureData = {
       "color": "bg-purple-500",
       "modelPath": "/models/pc.glb",
       "modelScale": 2,
-      "effects": ["spin"],
+      "effects": ["spin", "rgb", "dust"],
       "reversed": false,
       "attribution": {
         "name": "Gaming Computer by Alex Safayan [CC-BY] via Poly Pizza",
@@ -61,6 +61,7 @@ const adventureData: AdventureData = {
       "details": ["DaVinci Resolve", "VN"],
       "icon": "Video",
       "color": "bg-pink-500",
+      "scene": "editing",
       "reversed": true
     },
     {
@@ -72,7 +73,7 @@ const adventureData: AdventureData = {
       "color": "bg-cyan-500",
       "modelPath": "/models/Parachute.glb",
       "modelScale": 0.2,
-      "effects": ["float", "clouds"],
+      "effects": ["float", "clouds", "sway", "sun", "wind"],
       "reversed": false,
       "videoBackground": "https://assets.mixkit.co/videos/preview/mixkit-paraglider-flying-under-the-sun-41312-large.mp4",
       "ctaLink": "https://app.flygaggle.com/viewRecording?p=eyJ1c2VySWQiOiJpU1ZaWVA3S3FSUXZLblhERUNweTJsQTlJaWgxIiwicmVjb3JkaW5nSWQiOiJpU1ZaLTE3NjYzNzg3NTU1NjAifQ%3D%3D",
@@ -92,7 +93,7 @@ const adventureData: AdventureData = {
       "modelPath": "/models/Skier.glb",
       "modelScale": 0.5,
       "modelRotation": [-1.5708, -1, -1.5],
-      "effects": ["spin", "sparkles", "snow"],
+      "effects": ["spin", "sparkles", "snowfall", "carve"],
       "reversed": false,
       "watermark": "CARVE",
       "attribution": {
@@ -107,6 +108,7 @@ const adventureData: AdventureData = {
       "details": ["Surfing"],
       "icon": "Waves",
       "color": "bg-emerald-500",
+      "scene": "surfing",
       "reversed": true
     }
   ]

@@ -1,4 +1,5 @@
 import { Instagram } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 import adventureData from '@/data/adventure';
 import { HobbySection } from './HobbySection';
@@ -9,7 +10,13 @@ export function AdventurePortfolio() {
       {adventureData.hobbies.map((hobby, index) => (
         <HobbySection key={hobby.id} hobby={hobby} index={index} />
       ))}
-      <footer className="text-center py-24 border-t border-white/5">
+      <motion.footer
+        className="text-center py-24 border-t border-white/5"
+        initial={{ opacity: 0, y: 32 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+      >
         <h2 className="text-6xl font-display font-black mb-8 text-white/20">
           The Adventure Continues
         </h2>
@@ -22,7 +29,7 @@ export function AdventurePortfolio() {
           <Instagram size={28} />
           Check My Instagram
         </a>
-      </footer>
+      </motion.footer>
     </div>
   );
 }
