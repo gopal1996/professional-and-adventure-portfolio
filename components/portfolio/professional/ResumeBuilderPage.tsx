@@ -163,12 +163,19 @@ function buildResumeJSON(): object {
         { name: 'Node.js', level: 0 },
       ],
       libraries: [
+        { name: 'LangChain', level: 0 },
+        { name: 'LangGraph / Agents', level: 0 },
+        { name: 'RAG', level: 0 },
+        { name: 'MCP', level: 0 },
+        { name: 'Prompt Engineering', level: 0 },
+        { name: 'Evals & Guardrails', level: 0 },
         { name: 'Module Federation', level: 0 },
         { name: 'React Router 7', level: 0 },
         { name: 'Zustand', level: 0 },
         { name: 'Lingui', level: 0 },
       ],
       databases: [
+        { name: 'Vector DBs (Pinecone / Qdrant)', level: 0 },
         { name: 'Firebase', level: 3 },
       ],
       practices: [

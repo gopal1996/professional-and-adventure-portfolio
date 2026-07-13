@@ -69,7 +69,7 @@ export function Hero({
         <p className="text-xl md:text-3xl text-slate-500 dark:text-white/40 max-w-3xl mx-auto font-light leading-relaxed">
           {isAdventureMode
             ? 'Exploring the vertical world through paragliding, high-speed carving, and FPV drone engineering.'
-            : 'Senior Frontend Engineer specializing in high-performance React architectures and premium digital aesthetics.'}
+            : 'AI-Native Fullstack Engineer building LLM-powered products, agentic workflows, and AI-driven developer tooling, from prompt to production.'}
         </p>
         <div className="flex gap-4 justify-center pt-8">
           <button
