@@ -11,7 +11,7 @@ const professionalData: ProfessionalData = {
 - **Platform & DevOps**: Docker, Kubernetes, GCP, CI/CD, and end-to-end observability.`,
   "email": "krishnan.gopal34@gmail.com",
   "linkedin": "https://www.linkedin.com/in/gopal1996/",
-  "experienceYears": "8",
+  "experienceYears": "9",
   "experience": [
     {
       "title": "Freshworks",
@@ -109,6 +109,24 @@ const professionalData: ProfessionalData = {
     }
   ],
   "certifications": [
+    {
+      "title": "Claude Certified Architect - Professional",
+      "link": "https://www.credly.com/badges/e0bc375e-73db-4547-a3bc-5977b7464a2a",
+      "description": "Validation of expertise in architecting production systems with Claude and Anthropic's models",
+      "thumbnail": "https://images.credly.com/images/7583afbc-4aab-4c7d-8af4-d9af72786ab3/linkedin_thumb_blob"
+    },
+    {
+      "title": "Claude Certified Developer - Foundations",
+      "link": "https://www.credly.com/badges/9e9c4b92-7dfa-4e4e-bcac-e3fe59566ab0",
+      "description": "Validation of foundational skills in building with Claude and Anthropic's models",
+      "thumbnail": "https://images.credly.com/images/f101c6ac-8a2d-4220-b381-70e3e6c364e3/linkedin_thumb_blob"
+    },
+    {
+      "title": "Claude Certified Associate - Foundations",
+      "link": "https://www.credly.com/badges/0c7728a6-b2c8-4458-bbfc-a165327de4e4",
+      "description": "Validation of foundational knowledge of Claude and Anthropic's models",
+      "thumbnail": "https://images.credly.com/images/a6387cbd-5ac1-4894-833a-da2cbc28587e/linkedin_thumb_blob"
+    },
     {
       "title": "Google Associate Cloud Engineer",
       "link": "https://www.credly.com/badges/5e5cafc1-7854-4509-af96-6e67c897bd8f/public_url",
