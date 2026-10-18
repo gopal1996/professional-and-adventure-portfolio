@@ -2,7 +2,7 @@
 import { AdventureData } from '../types';
 
 const adventureData: AdventureData = {
-  "instagram": "https://instagram.com/gopal3008",
+  "instagram": "https://instagram.com/gopal.unbound",
   "hobbies": [
     {
       "id": "3dprint",
@@ -110,6 +110,16 @@ const adventureData: AdventureData = {
       "color": "bg-emerald-500",
       "scene": "surfing",
       "reversed": true
+    },
+    {
+      "id": "kitesurfing",
+      "title": "Kitesurfing",
+      "description": "In the first week of October 2026, I spent 6 days in Tuticorin learning kitesurfing. I managed to ride for a few minutes by the end of the trip. Still a long way to go, but I plan to keep practising.",
+      "details": ["Tuticorin", "6-Day Trip"],
+      "icon": "Wind",
+      "color": "bg-sky-500",
+      "scene": "surfing",
+      "reversed": false
     }
   ]
 };
